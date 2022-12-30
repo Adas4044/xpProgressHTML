@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Style the progress bar */
+      #xp-bar {
+        width: 400px;
+        height: 20px;
+        background-color: #ddd;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      
+      /* Style the filled portion of the progress bar */
+      #xp-bar .filled {
+        height: 100%;
+        background-color: #4caf50;
+        border-radius: 10px;
+      }
+      
+      /* Style the label showing the current XP level */
+      #xp-label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #4caf50;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="xp-bar">
+      <div class="filled"></div>
+    </div>
+    <div id="xp-label">Level 1</div>
+    
+    <script>
+      // Set the current XP level
+      let currentXP = 100;
+      // Set the maximum XP needed to reach the next level
+      let maxXP = 200;
+      
+      // Calculate the width of the filled portion of the progress bar
+      let filledWidth = (currentXP / maxXP) * 100;
+      
+      // Update the width of the filled portion of the progress bar
+      document.querySelector('.filled').style.width = filledWidth + '%';
+      
+      // Update the label showing the current XP level
+      document.querySelector('#xp-label').innerHTML = 'Level 1'; 
+        //+ (currentXP + 1);
+    </script>
+  </body>
+</html>
